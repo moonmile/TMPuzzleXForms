@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TMPuzzleXForms.MainPage">
+    <Grid ColumnSpacing="1" RowSpacing="1" Padding="0,0,0,0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="50" />
+			<RowDefinition Height="100" />
+			<RowDefinition Height="100" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="50" />
+		</Grid.RowDefinitions>
+	    <Label Grid.Row="0" Text="Three Match Pazzle" />
+	    <Grid Grid.Row="1">
+	      <Grid.RowDefinitions>
+	        <RowDefinition Height="*" />
+	        <RowDefinition Height="*" />
+	      </Grid.RowDefinitions>
+	      <Grid.ColumnDefinitions>
+	        <ColumnDefinition Width="*" />
+	        <ColumnDefinition Width="*" />
+	        <ColumnDefinition Width="*" />
+	        <ColumnDefinition Width="*" />
+	      </Grid.ColumnDefinitions>
+	   	  <Editor Grid.Row="0" Grid.Column="0" x:Name="textUserName"  Text="Your name" />
+            <Label Grid.Row="0" Grid.Column="2" Text="High Score" Font="16" 			/>
+            <Label Grid.Row="0" Grid.Column="3" x:Name="textHighScore" Text="0" Font="16"/>
+            <Label Grid.Row="1" Grid.Column="0" Text="Score" 				Font="16"/>
+            <Label Grid.Row="1" Grid.Column="1" x:Name="textScore" Text="0"  Font="16"/>
+            <Label Grid.Row="1" Grid.Column="2" Text="Rest" 				Font="16"/>
+            <Label Grid.Row="1" Grid.Column="3" x:Name="textRestMove" Text="0"  Font="16"/>
+	    </Grid>
+      	<Grid Grid.Row="2">
+	      	<Grid.ColumnDefinitions>
+		        <ColumnDefinition Width="50" />
+		        <ColumnDefinition Width="50" />
+		        <ColumnDefinition Width="50" />
+		        <ColumnDefinition Width="50" />
+		        <ColumnDefinition Width="50" />
+		    </Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Image Grid.Row="0" Grid.Column="0" Source="MarkBlue.png" />
+			<Image Grid.Row="0" Grid.Column="1" Source="MarkRed.png" />
+			<Image Grid.Row="0" Grid.Column="2" Source="MarkGreen.png" />
+			<Image Grid.Row="0" Grid.Column="3" Source="MarkPurple.png" />
+			<Image Grid.Row="0" Grid.Column="4" Source="MarkOrange.png" />
+			<Label Grid.Row="1" Grid.Column="0" Text="0" x:Name="textScoreBlue" Font="16"/>
+            <Label Grid.Row="1" Grid.Column="1" Text="0" x:Name="textScoreRed" Font="16"/>
+            <Label Grid.Row="1" Grid.Column="2" Text="0" x:Name="textScoreGreen" Font="16"/>
+            <Label Grid.Row="1" Grid.Column="3" Text="0" x:Name="textScorePurple" Font="16"/>
+            <Label Grid.Row="1" Grid.Column="4" Text="0" x:Name="textScoreOrange" Font="16"/>
+		</Grid>
+      	<Grid Grid.Row="3" ColumnSpacing="1" RowSpacing="1" >
+	      	<Grid.ColumnDefinitions>
+		        <ColumnDefinition Width="40"  />
+		        <ColumnDefinition Width="40" />
+		        <ColumnDefinition Width="40" />
+		        <ColumnDefinition Width="40" />
+		        <ColumnDefinition Width="40" />
+		        <ColumnDefinition Width="40" />
+		        <ColumnDefinition Width="40" />
+		    </Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="40" />
+			</Grid.RowDefinitions>
+
+			<Image x:Name="mark0" Grid.Row="0" Grid.Column="0" Source="MarkNone.png"  />
+			<Image x:Name="mark1" Grid.Row="0" Grid.Column="1" Source="MarkNone.png"  />
+			<Image x:Name="mark2" Grid.Row="0" Grid.Column="2" Source="MarkNone.png"  />
+			<Image x:Name="mark3" Grid.Row="0" Grid.Column="3" Source="MarkNone.png"  />
+			<Image x:Name="mark4" Grid.Row="0" Grid.Column="4" Source="MarkNone.png"  />
+			<Image x:Name="mark5" Grid.Row="0" Grid.Column="5" Source="MarkNone.png"  />
+			<Image x:Name="mark6" Grid.Row="0" Grid.Column="6" Source="MarkNone.png"  />
+
+			<Image x:Name="mark7" Grid.Row="1" Grid.Column="0" Source="MarkNone.png"  />
+			<Image x:Name="mark8" Grid.Row="1" Grid.Column="1" Source="MarkNone.png"  />
+			<Image x:Name="mark9" Grid.Row="1" Grid.Column="2" Source="MarkNone.png"  />
+			<Image x:Name="mark10" Grid.Row="1" Grid.Column="3" Source="MarkNone.png"  />
+			<Image x:Name="mark11" Grid.Row="1" Grid.Column="4" Source="MarkNone.png"  />
+			<Image x:Name="mark12" Grid.Row="1" Grid.Column="5" Source="MarkNone.png"  />
+			<Image x:Name="mark13" Grid.Row="1" Grid.Column="6" Source="MarkNone.png"  />
+
+			<Image x:Name="mark14" Grid.Row="2" Grid.Column="0" Source="MarkNone.png"  />
+			<Image x:Name="mark15" Grid.Row="2" Grid.Column="1" Source="MarkNone.png"  />
+			<Image x:Name="mark16" Grid.Row="2" Grid.Column="2" Source="MarkNone.png"  />
+			<Image x:Name="mark17" Grid.Row="2" Grid.Column="3" Source="MarkNone.png"  />
+			<Image x:Name="mark18" Grid.Row="2" Grid.Column="4" Source="MarkNone.png"  />
+			<Image x:Name="mark19" Grid.Row="2" Grid.Column="5" Source="MarkNone.png"  />
+			<Image x:Name="mark20" Grid.Row="2" Grid.Column="6" Source="MarkNone.png"  />
+
+			<Image x:Name="mark21" Grid.Row="3" Grid.Column="0" Source="MarkNone.png"  />
+			<Image x:Name="mark22" Grid.Row="3" Grid.Column="1" Source="MarkNone.png"  />
+			<Image x:Name="mark23" Grid.Row="3" Grid.Column="2" Source="MarkNone.png"  />
+			<Image x:Name="mark24" Grid.Row="3" Grid.Column="3" Source="MarkNone.png"  />
+			<Image x:Name="mark25" Grid.Row="3" Grid.Column="4" Source="MarkNone.png"  />
+			<Image x:Name="mark26" Grid.Row="3" Grid.Column="5" Source="MarkNone.png"  />
+			<Image x:Name="mark27" Grid.Row="3" Grid.Column="6" Source="MarkNone.png"  />
+
+			<Image x:Name="mark28" Grid.Row="4" Grid.Column="0" Source="MarkNone.png"  />
+			<Image x:Name="mark29" Grid.Row="4" Grid.Column="1" Source="MarkNone.png"  />
+			<Image x:Name="mark30" Grid.Row="4" Grid.Column="2" Source="MarkNone.png"  />
+			<Image x:Name="mark31" Grid.Row="4" Grid.Column="3" Source="MarkNone.png"  />
+			<Image x:Name="mark32" Grid.Row="4" Grid.Column="4" Source="MarkNone.png"  />
+			<Image x:Name="mark33" Grid.Row="4" Grid.Column="5" Source="MarkNone.png"  />
+			<Image x:Name="mark34" Grid.Row="4" Grid.Column="6" Source="MarkNone.png"  />
+    </Grid>
+		<Button Grid.Row="4" Text="Start" Font="Large" Clicked="buttonClick"/>
+   	</Grid>
+</ContentPage>
+
