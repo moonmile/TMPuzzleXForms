@@ -31,10 +31,7 @@ namespace TMPuzzleXForms.iOS
 
             window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-            // window.RootViewController = App.GetMainPage().CreateViewController();
-            var page = App.GetMainPage() as MainPage;
-            page.OnCreate();
-            window.RootViewController = page.CreateViewController();
+            window.RootViewController = App.GetMainPage().CreateViewController();
             window.MakeKeyAndVisible();
 
             return true;

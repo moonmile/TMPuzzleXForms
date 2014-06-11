@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TMPuzzleXForms\TMPuzzleXForms\MainPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TMPuzzleXForms\TMPuzzleXForms\MainPage.xaml.cs">
     <Files>
-      <File FileName="TMPuzzleXForms\TMPuzzleXForms\MainPage.xaml" Line="1" Column="1" />
-      <File FileName="TMPuzzleXForms\TMPuzzleXForms\MainPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="TMPuzzleXForms\TMPuzzleXForms\MainPage.xaml" Line="19" Column="37" />
+      <File FileName="TMPuzzleXForms\TMPuzzleXForms\MainPage.xaml.cs" Line="22" Column="41" />
       <File FileName="TMPuzzleXForms\TMPuzzleXForms\App.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

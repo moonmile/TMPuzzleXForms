@@ -127,6 +127,12 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="MarkBlue.png" />
+    <Content Include="MarkGreen.png" />
+    <Content Include="MarkNone.png" />
+    <Content Include="MarkOrange.png" />
+    <Content Include="MarkPurple.png" />
+    <Content Include="MarkRed.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

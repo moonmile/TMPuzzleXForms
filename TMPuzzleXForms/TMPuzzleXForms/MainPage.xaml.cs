@@ -5,6 +5,7 @@ using TMPuzzle.Core;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.IO;
 
 namespace TMPuzzleXForms
 {
@@ -21,9 +22,13 @@ namespace TMPuzzleXForms
         Image _sel1, _sel2;     // 選択したマーク
         ImageSource[] _mk;      // マーク画像
         Dictionary<Element, int> _tags;
+
         // 画面ロード時
-        public async void OnCreate()
+//        public async void OnCreate()
+        protected async override void OnAppearing()
         {
+ 	        base.OnAppearing();
+            
             _model = new DataModel();
             _logic = new Logic(_model);
 
@@ -50,16 +55,25 @@ namespace TMPuzzleXForms
                 _tags[img] = i;
             }
             var se = new XmlSerializer(typeof(MyData));
-            var documents =
-                System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
-            var file = System.IO.Path.Combine(documents, "mydata.xml");
             try
             {
+#if __IOS__ || __ANDROID__ 
+                var documents =
+                    System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+                var file = System.IO.Path.Combine(documents, "mydata.xml");
                 using (var stream = System.IO.File.OpenRead(file))
                 {
                     var m = se.Deserialize(stream) as MyData;
                     m.CopyTo(_model);
                 }
+#else
+                using (var stream = await Windows.Storage.ApplicationData.Current.LocalFolder.OpenStreamForReadAsync(
+                    "mydata.xml"))
+                {
+                    var m = se.Deserialize(stream) as MyData;
+                    m.CopyTo(_model);
+                }
+#endif
             }
             catch
             {
@@ -69,7 +83,9 @@ namespace TMPuzzleXForms
             // 画面を更新
             UpdateView();
             // モバイルサービスへ接続
+#if __IOS__ || __ANDROID__
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+#endif
             _mobile = new Mobile();
             // ハイスコアを取得
             var data = await _mobile.Read(_model.UserName);
@@ -125,6 +141,7 @@ namespace TMPuzzleXForms
                     }
                     // 状態をローカルストレージに保存
                     var se = new XmlSerializer(typeof(MyData));
+#if __IOS__ || __ANDROID__
                     var documents =
                         System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
                     var file = System.IO.Path.Combine(documents, "mydata.xml");
@@ -136,6 +153,18 @@ namespace TMPuzzleXForms
                         stream.Position = 0;
                         se.Serialize(stream, m);
                     }
+#else
+                    using (var stream = await Windows.Storage.ApplicationData.Current.LocalFolder.OpenStreamForWriteAsync(
+                        "mydata.xml", Windows.Storage.CreationCollisionOption.OpenIfExists))
+                    {
+                        var m = new MyData();
+                        m.CopyFrom(_model);
+                        stream.SetLength(0);
+                        stream.Position = 0;
+                        se.Serialize(stream, m);
+                    }
+#endif
+
                     if (_model.RestMove == 0)
                     {
                         // 終了した場合はモバイルサービスへ登録

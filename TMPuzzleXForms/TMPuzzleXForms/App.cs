@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace TMPuzzleXForms
 {
-	public class App
-	{
-        public static Page GetMainPage()
-        {
-            return new MainPage();
-        }
+public class App
+{
+    public static Page GetMainPage()
+    {
+        return new MainPage();
     }
+}
 }
