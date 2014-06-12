@@ -31,6 +31,7 @@ namespace TMPuzzleXForms
             
             _model = new DataModel();
             _logic = new Logic(_model);
+            this.BindingContext = _model;
 
             _mk = new ImageSource[DataModel.COLOR_MAX + 1];
             _mk[0] = ImageSource.FromFile("MarkNone.png");
@@ -90,8 +91,8 @@ namespace TMPuzzleXForms
             // ハイスコアを取得
             var data = await _mobile.Read(_model.UserName);
             _model.HighScore = data.Score;
-            this.textHighScore.Text = _model.HighScore.ToString();
-            this.textUserName.TextChanged += (_, __) => { _model.UserName = this.textUserName.Text; };
+            // this.textHighScore.Text = _model.HighScore.ToString();
+            // this.textUserName.TextChanged += (_, __) => { _model.UserName = this.textUserName.Text; };
         }
 
 
@@ -237,9 +238,9 @@ namespace TMPuzzleXForms
             this.textScoreGreen.Text = this._model.MatchCount[2].ToString();
             this.textScoreOrange.Text = this._model.MatchCount[3].ToString();
             this.textScorePurple.Text = this._model.MatchCount[4].ToString();
-            this.textScore.Text = string.Format("{0}", this._model.Score * 10);
+            // this.textScore.Text = string.Format("{0}", this._model.Score * 10);
             // 残り移動数を更新
-            this.textRestMove.Text = _model.RestMove.ToString();
+            // this.textRestMove.Text = _model.RestMove.ToString();
         }
 
         /// <summary>

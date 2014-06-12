@@ -3,9 +3,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TMPuzzleXForms.MainPage">
-    <Grid ColumnSpacing="1" RowSpacing="1" Padding="0,0,0,0">
+    <Grid
+        ColumnSpacing="1" RowSpacing="1" >
 		<Grid.RowDefinitions>
-			<RowDefinition Height="1*" />
+			<RowDefinition Height="30" />
 			<RowDefinition Height="1*" />
 			<RowDefinition Height="1*" />
 			<RowDefinition Height="240" />
@@ -23,13 +24,21 @@
 	        <ColumnDefinition Width="*" />
 	        <ColumnDefinition Width="*" />
 	      </Grid.ColumnDefinitions>
-	   	  <Editor Grid.Row="0" Grid.Column="0" x:Name="textUserName"  Text="Your name" />
+            <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                    x:Name="textUserName"  
+                    Text="{Binding UserName}" />
             <Label Grid.Row="0" Grid.Column="2" Text="High" Font="16" 			/>
-            <Label Grid.Row="0" Grid.Column="3" x:Name="textHighScore" Text="0" Font="16"/>
-            <Label Grid.Row="1" Grid.Column="0" Text="Score" 				Font="16"/>
-            <Label Grid.Row="1" Grid.Column="1" x:Name="textScore" Text="0"  Font="16"/>
-            <Label Grid.Row="1" Grid.Column="2" Text="Rest" 				Font="16"/>
-            <Label Grid.Row="1" Grid.Column="3" x:Name="textRestMove" Text="0"  Font="16"/>
+            <Label Grid.Row="0" Grid.Column="3" 
+                   x:Name="textHighScore" 
+                   Text="{Binding HighScore, StringFormat='{0}'}" Font="16"/>
+            <Label Grid.Row="1" Grid.Column="0" Text="Score" Font="16"/>
+            <Label Grid.Row="1" Grid.Column="1" 
+                   x:Name="textScore" 
+                   Text="{Binding Score, StringFormat='{0}'}"  Font="16"/>
+            <Label Grid.Row="1" Grid.Column="2" Text="Rest" Font="16"/>
+            <Label Grid.Row="1" Grid.Column="3" 
+                   x:Name="textRestMove" 
+                   Text="{Binding RestMove, StringFormat='{0}'}"  Font="16"/>
 	    </Grid>
       	<Grid Grid.Row="2">
 	      	<Grid.ColumnDefinitions>
@@ -119,7 +128,7 @@
 			<Image x:Name="mark34" Grid.Row="5" Grid.Column="7" Source="MarkNone.png"  />
     </Grid>
 		<Button 
-            Grid.Row="4" Text="Start" Clicked="buttonClick"/>
+            Grid.Row="4" Text="Reset" Clicked="buttonClick"/>
    	</Grid>
 </ContentPage>
 
