@@ -6,20 +6,21 @@ Xamarin.Forms version of TMPuzzle
 # About
 
 http://xamar.in/r/XamarinFormsContest #XamarinForms 
-のために、Xamarin.Forms に移植したもの。
+Those for Xamarin.Forms contest, were converted to Xamarin.Forms pattern.
 
-元ネタは「C#によるiOS、Android、Windowsアプリケーション開発入門」
-http://www.amazon.co.jp/dp/4822298345
-のサンプルから。
+Original program is 
+"iOS, Android, Windows application development Getting Started with C # due to" 
+http://www.amazon.co.jp/dp/4822298345 
+From a sample sources.
 
 # Technical points
 
 - use Xamarin.Forms 
-- XAML ファイルを共有プロジェクトで使う
-- ゲームロジックを PCL で共通化
-- Azure Moble Services を PCL で共通化
+- use a shared project a XAML file
+- The shared by PCL game logic
+- The shared by the PCL Azure Moble Services
 
-# 注意点
+# Notes
 
-現バージョンでは、XAML ファイルを共通プロジェクトで使うと Xamarin Studio for Mac でビルドができない。Visual Studio 2013 & Xamarin.iOS/Android の場合はビルドができるので、Windows 環境でビルドすること。
-
+In the current version, the build is not made of Xamarin Studio for Mac If you use a shared project a XAML file. 
+Build can be the case of the 2013 & Xamarin.iOS / Android Visual Studio, to build in the Windows environment.
