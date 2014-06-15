@@ -19,6 +19,8 @@ From a sample sources.
 - use a shared project a XAML file
 - The shared by PCL game logic
 - The shared by the PCL Azure Moble Services
+- Take the MVVM only a little
+- Take the TapGestureRecognizer to tap event of an Image control
 
 # Notes
 
