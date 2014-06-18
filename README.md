@@ -26,3 +26,11 @@ From a sample sources.
 
 In the current version, the build is not made of Xamarin Studio for Mac If you use a shared project a XAML file. 
 Build can be the case of the 2013 & Xamarin.iOS / Android Visual Studio, to build in the Windows environment.
+
+# Images
+
+![Android](/doc/images/20140615_01.jpg)
+
+![iPhone](/doc/images/20140615_02.jpg)
+
+![Windows Phone](/doc/images/20140615_04.jpg)
